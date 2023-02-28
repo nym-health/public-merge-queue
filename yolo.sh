@@ -1,4 +1,4 @@
 #!/bin/sh
 set -x -e
 
-echo "yolo fff"
+echo "yolo berger"
