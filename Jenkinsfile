@@ -9,12 +9,24 @@ pipeline {
         disableConcurrentBuilds abortPrevious: true
     }
     stages {
-        stage("Run Tests") {
+        stage("Start") {
             steps {
                 script {
                     echo("=== START ===")
+                }
+            }
+        }
+        stage("Sleep") {
+            steps {
+                script {
                     sh("sleep 10")
-                    echo("=== DONE ===")
+                }
+            }
+        }
+        stage("Finish") {
+            steps {
+                script {
+                    echo("=== Finish ===")
                 }
             }
         }
