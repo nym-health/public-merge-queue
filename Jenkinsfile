@@ -34,7 +34,7 @@ pipeline {
             steps {
                 script {
                     sh("""sleep 5""")
-                    sh("""exit 0""")
+                    sh("""exit 2""")
                 }
             }
         }
