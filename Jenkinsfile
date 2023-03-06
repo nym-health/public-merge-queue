@@ -9,27 +9,10 @@ pipeline {
         disableConcurrentBuilds abortPrevious: true
     }
     stages {
-        stage("Start") {
+        stage("Hello World") {
             steps {
                 script {
-                    if (env.CHANGE_ID != null) {
-                        error("yolo11111")
-                    }
-                    echo("=== START ===")
-                }
-            }
-        }
-        stage("Sleep") {
-            steps {
-                script {
-                    sh("sleep 4")
-                }
-            }
-        }
-        stage("Finish") {
-            steps {
-                script {
-                    echo("=== Finish ===")
+                    sh("env")
                 }
             }
         }
