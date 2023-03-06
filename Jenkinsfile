@@ -13,6 +13,7 @@ pipeline {
             steps {
                 script {
                     sh("""exit 0""")
+                    sh("sleep 10")
                 }
             }
         }
