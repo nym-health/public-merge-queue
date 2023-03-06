@@ -12,7 +12,8 @@ pipeline {
         stage("Start") {
             steps {
                 script {
-                    echo("=== START ===")
+		    sh "env"
+		    echo("=== START ===")
                 }
             }
         }
