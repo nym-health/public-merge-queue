@@ -1,4 +1,5 @@
 #!/bin/sh
 set -x -e
 
-echo "yolo aaaa"
+foo foo foo
+
