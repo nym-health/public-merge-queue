@@ -13,6 +13,7 @@ pipeline {
             steps {
                 script {
                     sh("""exit 0""")
+                    sh("sleep 10")
                 }
             }
         }
@@ -33,7 +34,7 @@ pipeline {
             steps {
                 script {
                     sh("""sleep 5""")
-                    sh("""exit 5""")
+                    sh("""exit 0""")
                 }
             }
         }
