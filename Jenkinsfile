@@ -13,6 +13,7 @@ pipeline {
             steps {
                 script {
                     sh("env")
+                    echo("==== 1 ====")
                 }
             }
         }
