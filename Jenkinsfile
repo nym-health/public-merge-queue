@@ -17,7 +17,7 @@ pipeline {
                         owner="nym-health"
                         repo="public-merge-queue"
                         branch="\$env.BRANCH_NAME"
-                        token="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"
+                        token=""
     
                         # Construct the API endpoint URL
                         url="https://api.github.com/repos/${owner}/${repo}/pulls"
