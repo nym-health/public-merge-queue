@@ -14,6 +14,7 @@ pipeline {
                 script {
                     sh("env")
                     echo("==== 1 ====")
+                    sh("sleep 15")
                 }
             }
         }
