@@ -12,7 +12,7 @@ pipeline {
         stage("Check if Open PR") {
             steps {
                 script {
-                    sh("""exit 1""")
+                    sh("""exit 0""")
                 }
             }
         }
@@ -33,7 +33,7 @@ pipeline {
             steps {
                 script {
                     sh("""sleep 5""")
-                    sh("""exit 0""")
+                    sh("""exit 1""")
                 }
             }
         }
