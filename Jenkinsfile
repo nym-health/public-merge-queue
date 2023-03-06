@@ -12,7 +12,7 @@ pipeline {
         stage("Start") {
             steps {
                 script {
-                    if (env.CHANGE_ID == null) {
+                    if (env.CHANGE_ID != null) {
                         error("yolo11111")
                     }
                     echo("=== START ===")
