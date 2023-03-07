@@ -9,44 +9,10 @@ pipeline {
         disableConcurrentBuilds abortPrevious: true
     }
     stages {
-        stage("Check if Open PR") {
-            steps {
-                script {
-                    sh("""exit 0""")
-                    sh("sleep 10")
-                }
-            }
-        }
         stage("Run Fast") {
             steps {
                 script {
                     sh("""sleep 1""")
-                    sh("""exit 0""")
-                }
-            }
-        }
-        stage("Run Slow") {
-            when {
-                expression {
-                    return env.BRANCH_NAME.contains("gh-readonly-queue/develop/pr-")
-                }
-            }
-            steps {
-                script {
-                    sh("""sleep 5""")
-                    sh("""exit 0""")
-                }
-            }
-        }
-        stage("Stage Fin - 2") {
-            when {
-                expression {
-                    return env.BRANCH_NAME.contains("gh-readonly-queue/develop/pr-")
-                }
-            }
-            steps {
-                script {
-                    sh("""sleep 5""")
                     sh("""exit 0""")
                 }
             }
