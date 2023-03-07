@@ -9,7 +9,7 @@ pipeline {
         disableConcurrentBuilds abortPrevious: true
     }
     stages {
-        stage("Run Fast") {
+        stage("Run Slow") {
             steps {
                 script {
                     sh("""sleep 5""")
