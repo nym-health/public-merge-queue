@@ -17,5 +17,14 @@ pipeline {
             }
         }
     }
+    stages {
+        stage("Run Slow") {
+            steps {
+                script {
+                  sh("""sleep 1""")
+                }
+            }
+        }
+    }
 }
 
