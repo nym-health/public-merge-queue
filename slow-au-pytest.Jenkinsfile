@@ -17,13 +17,5 @@ pipeline {
                 }
             }
         }
-        stage("Run Fast Tests") {
-            steps {
-                script {
-                    sh("""sleep 1""")
-                    sh("""exit 0""")
-                }
-            }
-        }
     }
 }
