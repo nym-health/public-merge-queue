@@ -17,10 +17,17 @@ pipeline {
             }
         }
         stage("Run Slow Tests") {
-            steps {
-                script {
-                    sh("""sleep 1""")
-                    sh("""exit 60""")
+            failFast false
+            parallel {
+                stage("Run Slow AU Pytest") {
+                    steps {
+                        build(job: "Sandbox/Berger/slow-au-pytest/develop", wait: true, propagate: true)
+                    }
+                }
+                stage("Run Slow Parrot Pytest") {
+                    steps {
+                        build(job: "Sandbox/Berger/slow-parrot-pytest/develop", wait: true, propagate: true)
+                    }
                 }
             }
         }
