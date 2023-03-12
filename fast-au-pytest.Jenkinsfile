@@ -11,6 +11,7 @@ pipeline {
         stage("Run Fast") {
             steps {
                 script {
+                    sh(env)
                     sh("""sleep 1""")
                     sh("""exit 0""")
                 }
