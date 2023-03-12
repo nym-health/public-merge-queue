@@ -6,7 +6,6 @@ pipeline {
                                   artifactNumToKeepStr: "",
                                   daysToKeepStr: "30",
                                   numToKeepStr: ""))
-        disableConcurrentBuilds abortPrevious: true
     }
     stages {
         stage("Run Fast") {
