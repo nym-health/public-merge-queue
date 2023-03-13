@@ -1,1 +1,1 @@
-echo "pika pika"
+echo "pika pika chu chu"
