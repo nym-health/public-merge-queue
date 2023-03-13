@@ -6,21 +6,15 @@ pipeline {
                                   artifactNumToKeepStr: "",
                                   daysToKeepStr: "30",
                                   numToKeepStr: ""))
-        disableConcurrentBuilds abortPrevious: true
     }
     stages {
-        stage("Sleep Slow") {
+        stage("Run Fake Pytest") {
             steps {
                 script {
+                    echo("""Pytest I choose you 🧪""")
                     sh("""sleep 10""")
                 }
             }
         }
-        stage("Run Pytest") {
-            steps {
-                build(job: "Sandbox/Berger/Fake Pytest/develop", wait: true, propagate: true)
-            }
-        }
     }
 }
-
