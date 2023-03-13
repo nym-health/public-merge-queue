@@ -19,12 +19,9 @@ pipeline {
         stage("Notify GitHub") {
             steps {
                 script {
-                    def buildCause = env.BUILD_CAUSE
-                    if (buildCause != null) {
-                        echo "${buildCause.shortDescription} triggered me"
-                    } else {
-                        echo "This build was not triggered by another build"
-                    }
+                    def buildCause = currentBuild.getBuildCauses()[0]["shortDescription"]
+                    echo("$buildCause")
+                    
                     String inputString = 'gh-readonly-queue/develop/pr-90-98b320b705e10a5058ba7d95a275e5df7354e82e'
                     def prNumber = inputString =~ /pr-\d+/
                     if (prNumber) {
