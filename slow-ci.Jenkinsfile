@@ -21,7 +21,7 @@ pipeline {
                 build(job: "Sandbox/Berger/Fake Pytest/develop", wait: true, propagate: true)
             }
         }
-        stage("Sleep Slow") {
+        stage("Exit") {
             steps {
                 script {
                     sh("""exit 55""")
