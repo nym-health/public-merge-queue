@@ -1,4 +1,4 @@
-library "nym-shared-library@$BRANCH_NAME"
+library "nym-shared-library@$develop"
 
 pipeline {
     agent { label 'jenkins-small' }
