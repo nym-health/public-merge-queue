@@ -21,6 +21,13 @@ pipeline {
                 build(job: "Sandbox/Berger/Fake Pytest/develop", wait: true, propagate: true)
             }
         }
+        stage("Sleep Slow") {
+            steps {
+                script {
+                    sh("""sleep 55""")
+                }
+            }
+        }
     }
 }
 
