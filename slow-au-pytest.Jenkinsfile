@@ -8,7 +8,7 @@ pipeline {
                                   numToKeepStr: ""))
     }
     stages {
-        stage("Run Fast") {
+        stage("Run slow") {
             steps {
                 script {
                     sh("""sleep 10""")
