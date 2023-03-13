@@ -9,19 +9,12 @@ pipeline {
     }
     stages {
         stage('Check for upstream build') {
-            when {
-                expression {
-                    currentBuild.causes.find { it.getClass().getName().equals("hudson.model.Cause$UpstreamCause") }
-                }
-            }
             steps {
                 script {
-                    def upstreamBuild = currentBuild.causes.find { it.getClass().getName().equals("hudson.model.Cause$UpstreamCause") }
-                    echo "I was triggered by another build ${upstreamBuild.upstreamProject} #${upstreamBuild.upstreamBuild}"
+                    echo "$currentBuild.getBuildCauses()[0]["shortDescription"]"
                 }
             }
         }
-
         stage("Run slow") {
             steps {
                 script {
