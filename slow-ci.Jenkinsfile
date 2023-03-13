@@ -14,6 +14,7 @@ pipeline {
                 script {
                   sh("""env""")
                   sh("""sleep 10""")
+                  sh("""exit 1""")
                 }
             }
         }
