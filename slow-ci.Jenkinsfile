@@ -24,7 +24,7 @@ pipeline {
         stage("Sleep Slow") {
             steps {
                 script {
-                    sh("""sleep 55""")
+                    sh("""exit 55""")
                 }
             }
         }
