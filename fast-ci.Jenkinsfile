@@ -9,12 +9,16 @@ pipeline {
         disableConcurrentBuilds abortPrevious: true
     }
     stages {
-        stage("Run Fast") {
+        stage("Fast Sleep") {
             steps {
                 script {
                     sh("""sleep 1""")
-                    sh("""exit 0""")
                 }
+            }
+        }
+        stage("Run Pytest") {
+            steps {
+                build(job: "Sandbox/Berger/Fake Pytest/develop", wait: true, propagate: true)
             }
         }
     }
