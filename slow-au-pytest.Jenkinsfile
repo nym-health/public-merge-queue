@@ -8,10 +8,10 @@ pipeline {
                                   numToKeepStr: ""))
     }
     stages {
-        stage("Run Fast") {
+        stage("Run slow") {
             steps {
                 script {
-                    sh("""sleep 20""")
+                    sh("""sleep 10""")
                     sh("""exit 0""")
                 }
             }
