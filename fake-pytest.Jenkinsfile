@@ -1,3 +1,5 @@
+library "nym-shared-library@develop"
+
 pipeline {
     agent { label 'jenkins-small' }
     options {
