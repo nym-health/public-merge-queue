@@ -8,6 +8,13 @@ pipeline {
                                   numToKeepStr: ""))
     }
     stages {
+        stage('Check for upstream build') {
+            steps {
+                script {
+                    echo "${currentBuild.getBuildCauses()[0]["shortDescription"]}"
+                }
+            }
+        }
         stage("Run slow") {
             steps {
                 script {
