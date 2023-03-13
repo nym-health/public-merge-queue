@@ -11,7 +11,7 @@ pipeline {
         stage('Check for upstream build') {
             steps {
                 script {
-                    echo "$currentBuild.getBuildCauses()[0]["shortDescription"]"
+                    echo "{$currentBuild.getBuildCauses()[0]["shortDescription"]}"
                 }
             }
         }
