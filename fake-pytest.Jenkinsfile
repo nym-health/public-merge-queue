@@ -19,11 +19,9 @@ pipeline {
         stage("Notify GitHub") {
             steps {
                 script {
-                    def buildCause = currentBuild.getBuildCauses()[0]["shortDescription"]
-                    echo("$buildCause")
-                    
-                    String inputString = 'gh-readonly-queue/develop/pr-90-98b320b705e10a5058ba7d95a275e5df7354e82e'
-                    def prNumber = inputString =~ /pr-\d+/
+                    String buildCause = currentBuild.getBuildCauses()[0]["shortDescription"].toString()
+//                  String inputString = 'gh-readonly-queue/develop/pr-90-98b320b705e10a5058ba7d95a275e5df7354e82e'
+                    def prNumber = buildCause =~ /pr-\d+/
                     if (prNumber) {
                         println "PR Number: ${prNumber[0]}"
                     } else {
