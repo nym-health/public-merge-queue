@@ -24,7 +24,11 @@ pipeline {
 //                  String inputString = 'gh-readonly-queue/develop/pr-90-98b320b705e10a5058ba7d95a275e5df7354e82e'
                     def prNumber = buildCause =~ /pr-\d+/
                     if (prNumber) {
-                        println "PR Number: ${prNumber[0]}"
+//                      println "PR Number: ${prNumber[0]}"
+
+                        prNumberString=prNumber[0].toString()
+                        println "PR Number: ${prNumberString}"
+                        scmUtils.commentPr(repo: "public-merge-queue", prNumber: prNumberString, comment: "hi omer")
                     } else {
                         println "No PR number found in input string"
                     }
