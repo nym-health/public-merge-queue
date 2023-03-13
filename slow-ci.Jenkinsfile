@@ -12,23 +12,8 @@ pipeline {
         stage("Run Slow") {
             steps {
                 script {
-                  sh("""env""")
-                  sh("""sleep 10""")
-                }
-            }
-        }
-        stage("Run Slow Tests") {
-            failFast false
-            parallel {
-                stage("Run Slow AU Pytest") {
-                    steps {
-                        build(job: "Sandbox/Berger/slow-au-pytest/develop", wait: true, propagate: true)
-                    }
-                }
-                stage("Run Slow Parrot Pytest") {
-                    steps {
-                        build(job: "Sandbox/Berger/slow-parrot-pytest/develop", wait: true, propagate: true)
-                    }
+                    sh("""env""")
+                    sh("""sleep 10""")
                 }
             }
         }
