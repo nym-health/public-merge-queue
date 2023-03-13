@@ -24,9 +24,11 @@ pipeline {
             parallel {
                 stage("Run Fast AU Pytest") {
                     steps {
-                        fastau = build(job: "Sandbox/Berger/fast-au-pytest/develop", wait: true, propagate: false)
-                        url = fastau.getAbsoluteUrl()
-                        echo "$url"
+                        script {
+                            fastau = build(job: "Sandbox/Berger/fast-au-pytest/develop", wait: true, propagate: false)
+                            url = fastau.getAbsoluteUrl()
+                            echo "$url"
+                        }
                     }
                 }
                 stage("Run Fast Parrot Pytest") {
