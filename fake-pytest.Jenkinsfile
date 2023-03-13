@@ -31,7 +31,7 @@ pipeline {
 
                     if (matcher.find()) {
                         prNumber = matcher.group()
-                        println "PR Number: ${prNumberString}"
+                        println "PR Number: ${prNumber}"
                         scmUtils.commentPr(repo: "public-merge-queue", prNumber: prNumber, comment: "hi omer")
                     } else {
                         println "No PR number found in input string"
