@@ -1,1 +1,1 @@
-echo "pikachu"
+echo "Pikachu I choose you!"
