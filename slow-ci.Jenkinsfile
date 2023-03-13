@@ -14,7 +14,6 @@ pipeline {
                 script {
                   sh("""env""")
                   sh("""sleep 10""")
-                  sh("""exit 1""")
                 }
             }
         }
@@ -30,6 +29,13 @@ pipeline {
                     steps {
                         build(job: "Sandbox/Berger/slow-parrot-pytest/develop", wait: true, propagate: true)
                     }
+                }
+            }
+        }
+        stage("Fail Slow") {
+            steps {
+                script {
+                  sh("""exit 1""")
                 }
             }
         }
