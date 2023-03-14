@@ -12,7 +12,7 @@ pipeline {
             steps {
                 script {
                     echo("""Pytest I choose you 🧪""")
-                    sh("""sleep 55""")
+                    sh("""sleep 1000""")
                 }
             }
         }
