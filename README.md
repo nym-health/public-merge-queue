@@ -1,3 +1,2 @@
-# public-merge-queue
-Public POC!!!!
+# public-merge-queue (Public!)
 # MQ is wonderful! 
